@@ -10,27 +10,29 @@ public class Guerrier extends Player {
     public void basicAttack(Player enemy) {
         System.out.printf("%s utilise %s et inflige %d points de dommages.\n", this.getPlayerOwner(), this.getBasicAttackName(), this.getForce());
         enemy.setVie(enemy.getVie() - this.getForce());
+        System.out.printf("Il reste %d points de vie à l'adversaire. \n", enemy.getVie());
     }
 
     @Override
     public void specialAttack(Player enemy) {
         System.out.printf("%s utilise %s et inflige %d points de dommages.\n", this.getPlayerOwner(), this.getSpecialAttackName(), this.getForce());
         enemy.setVie(enemy.getVie() - this.getForce() * 2);
+        System.out.printf("Il reste %d points de vie à l'adversaire. \n", enemy.getVie());
     }
 
     @Override
     String getDescription() {
-        return "Je suis un guerrier";
+        return "Je suis un guerrier ! Je tire mes pouvoirs de la force, mon attaque basique est un coup d'épée et mon attaque spéciale est ma rage !";
     }
 
     @Override
     String getBasicAttackName() {
-        return "Epée";
+        return "Coup d’Épée ";
     }
 
     @Override
     String getSpecialAttackName() {
-        return "Rage";
+        return "Coup de Rage";
     }
 
 }
